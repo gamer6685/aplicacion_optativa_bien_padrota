@@ -1,0 +1,164 @@
+/* Estilos generales del contenedor F1 */
+.f1-tracker-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #121216; /* Fondo negro carbón / Pits */
+  color: #f1f1f1;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  border: 1px solid #2a2a35;
+}
+
+.f1-tracker-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+  border-bottom: 2px solid #e10600; /* Rojo F1 clásico */
+  padding-bottom: 10px;
+}
+
+/* Controles y botones de ordenamiento */
+.f1-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.f1-controls button {
+  background-color: #1f1f29;
+  color: #ffffff;
+  border: 1px solid #3f3f4e;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.f1-controls button:hover {
+  background-color: #e10600;
+  border-color: #e10600;
+  box-shadow: 0 0 12px rgba(225, 6, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Tabla de posiciones estilo telemetría */
+.f1-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.f1-table th {
+  background-color: #1a1a24;
+  color: #a0a0b0;
+  padding: 14px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  border-bottom: 2px solid #333342;
+}
+
+.f1-table td {
+  padding: 14px;
+  border-bottom: 1px solid #1f1f29;
+  font-size: 0.95rem;
+}
+
+/* Fila con efecto hover interactivo */
+.f1-row {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.f1-row:hover {
+  background-color: #1a1a24;
+  transform: scale(1.01);
+}
+
+.posicion-final {
+  font-weight: bold;
+  color: #e10600;
+}
+
+.codigo {
+  color: #888899;
+  font-size: 0.85rem;
+}
+
+/* Indicadores de cambio de posición */
+.ganado {
+  color: #00ff88;
+  font-weight: bold;
+}
+
+.perdido {
+  color: #ff3333;
+  font-weight: bold;
+}
+
+.neutro {
+  color: #666677;
+}
+
+/* Si el contenedor general está en modo pista, ajustamos los colores de la tabla */
+.modo-pista .f1-tracker-container {
+  background-color: #ffffff !important;
+  color: #222225 !important;
+  border: 1px solid #dcdce6 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+.modo-pista .f1-table th {
+  background-color: #f0f0f5 !important;
+  color: #555566 !important;
+  border-bottom: 2px solid #cccctc !important;
+}
+
+.modo-pista .f1-table td {
+  border-bottom: 1px solid #eeeef4 !important;
+}
+
+.modo-pista .f1-row:hover {
+  background-color: #f8f8fc !important;
+}
+
+.modo-pista .f1-controls button {
+  background-color: #f0f0f5 !important;
+  color: #33333d !important;
+  border: 1px solid #cccccc !important;
+}
+
+/* Asegura que la tabla se comporte de forma fluida */
+.f1-table tbody {
+  position: relative;
+}
+
+/* Transición suave para cada fila cuando cambia su orden */
+.f1-row {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.f1-row:hover {
+  background-color: #1a1a24;
+  transform: translateX(6px); /* Pequeño desplazamiento lateral estilo telemetría al pasar el cursor */
+}
+
+.dnf-badge {
+  background-color: rgba(255, 51, 51, 0.15);
+  color: #ff3333;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border: 1px solid rgba(255, 51, 51, 0.3);
+  display: inline-block;
+}
